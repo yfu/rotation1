@@ -1,0 +1,40 @@
+
+R version 2.15.1 (2012-06-22) -- "Roasted Marshmallows"
+Copyright (C) 2012 The R Foundation for Statistical Computing
+ISBN 3-900051-07-0
+Platform: i386-apple-darwin9.8.0/i386 (32-bit)
+
+R is free software and comes with ABSOLUTELY NO WARRANTY.
+You are welcome to redistribute it under certain conditions.
+Type 'license()' or 'licence()' for distribution details.
+
+  Natural language support but running in an English locale
+
+R is a collaborative project with many contributors.
+Type 'contributors()' for more information and
+'citation()' on how to cite R or R packages in publications.
+
+Type 'demo()' for some demos, 'help()' for on-line help, or
+'help.start()' for an HTML browser interface to help.
+Type 'q()' to quit R.
+
+> setwd("/Users/yfu/Dropbox/Courses/Rotation/results/2012-12-07/HaibTfbsA549")
+> 
+> # How to plot p-values of hyper and binom:
+> binom = read.table("HaibTfbsA549_great_binom_p.txt", header=F)
+> hyper = read.table("HaibTfbsA549_great_hyper_p.txt", header=F)
+> binom.x = binom$V1
+> binom.y = binom$V2
+> hyper.x = hyper$V1
+> hyper.y = hyper$V2
+> 
+> 
+> # First plot
+> plot(hyper.x, log(hyper.y), ylim=c(-7, 0), pch=16, axe=FALSE, xlab="", ylab="", type="b", col="black", main="HaibTfbsA549 GO:0032465: log p-values of binom and hyper")
+> axis(2, ylim=c(-7, 0), col="black")
+> mtext("log p-value of hyper", side=2, line=2.5)
+> box()
+> par(new=T)
+> log()
+Error: 0 arguments passed to 'log' which requires 1 or 2
+Execution halted

@@ -1,3 +1,7 @@
+*.narrowPeak
+*.bed
+*.parsed.txt
+
 *.py[cod]
 
 # C extensions

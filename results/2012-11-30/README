@@ -1,0 +1,5 @@
+Description of these files:
+
+1. The are narrowPeak files refined by idr.
+2. Because the original file names are too long, I renamed all of them by choosing only the part before "_VS_" and keeping the original suffix.
+3. For convenience, the column 3 in all these narrowPeak files are given the name of the lab + element + cell line and so on (just the name of the renamed file).

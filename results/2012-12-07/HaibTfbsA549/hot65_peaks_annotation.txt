@@ -1,0 +1,9 @@
+# Argument List:
+# Name = hot65
+# peak file = hot65.bed
+# gene pos to peak = up,down
+# distance = 2000 bp
+# genome = ../../../bin/peak2gene/hg19.refGene
+# Output symbol as gene name = True
+#chrom	pStart	pEnd	pName	pScore	NA	gene	strand	TSS2pCenter
+chr19	39339038	39343767	66	0	0	HNRNPL|HNRNPL	-|-	-1577|785

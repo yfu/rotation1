@@ -1,0 +1,122 @@
+A detailed explanation can be found here:
+
+http://bejerano.stanford.edu/help/display/GREAT/Programming+Interface
+
+1. To use web mode of GREAT, write this to a .html file:
+
+<html>
+ <body>
+  <a href="http://bejerano.stanford.edu/great/public/cgi-bin/greatStart.php?requestSpecies=hg19&requestName=Example+Data&requestSender=Yu&requestURL=http%3A%2F%2Fzlab.bu.edu%2Fgreat%2FHaibTfbsA549Atf3V0422111Etoh02AlnRep0.bed">
+  Send to GREAT
+  </a>
+ </body>
+</html>
+
+Remember to encode the url in the html file.
+
+2. To use batch mode of GREAT, use this commmand:
+
+
+wget -O results.tsv "http://bejerano.stanford.edu/great/public/cgi-bin/greatStart.php?outputType=batch&requestSpecies=hg19&requestName=Example+Data&requestSender=Client+A&requestURL=http%3A%2F%2Fzlab.bu.edu%2Fgreat%2FHaibTfbsA549Atf3V0422111Etoh02AlnRep0.bed"
+
+3. About the format of the output (*.tsv) by GREAT batch mode:
+
+About output by batch mode in GREAT (each line represents a column in the output by batch mode):
+
+
+
+1. Ontology
+2. Term ID
+
+3. Description
+
+------------------------Binomial over Regions------------------------
+
+ 4. Rank
+
+ 5. Raw P-Value
+
+ 6. Bonferroni P-Value
+
+ 7. FDR Q-Value
+
+ 8. Fold Enrichment (Obs/Exp)
+
+ 9. Expected (n * p)
+
+ 10. Observed Region Hits (k)
+
+ 11. Genome Fraction (p)
+
+ 12. Region Set Coverage (k/n)
+
+------------------------Hypergeometric over Genes------------------------
+
+ 13. Rank
+
+ 14. Raw P-Value
+
+ 15. Bonferroni P-Value
+
+ 16. FDR Q-Value
+
+ 17. Fold Enrichment (Obs/Exp)
+
+ 18. Expected (n * K/N)
+
+ 19. Observed Gene Hits (k)
+
+ 20. Total Genes (K)
+
+ 21. Gene Set Coverage (k/n)
+
+ 22. Term Gene Coverage (k/K)
+
+------------------------
+
+23. Regions
+
+wget -O results.tsv "http://bejerano.stanford.edu/great/public/cgi-bin/greatStart.php?outputType=batch&requestSpecies=hg18&requestName=Example+Data&requestSender=Client+A&requestURL=http%3A%2F%2Fwww.clientA.com%2Fdata%2Fexample1.bed"
+
+
+
+
+# How to plot p-values of hyper and binom:
+binom = read.table("HaibTfbsA549_great_binom_p.txt", header=F)
+hyper = read.table("HaibTfbsA549_great_hyper_p.txt", header=F)
+binom.x = binom$V1
+binom.y = binom$V2
+hyper.x = hyper$V1
+hyper.y = hyper$V2
+
+
+# First plot
+plot(hyper.x, log(hyper.y), ylim=c(-7, 0), pch=16, axe=FALSE, xlab="", ylab="", type="b", col="black", main="HaibTfbsA549: log p-values of binom and hyper")
+axis(2, ylim=c(-7, 0), col="black")
+mtext("log p-value of hyper", side=2, line=2.5)
+box()
+par(new=T)
+log()
+
+# Second plot
+plot(binom.x, log(binom.y), pch=15, xlab="", ylab="", ylim=c(-30,0), axe=FALSE, type="b", col="red")
+mtext("log p-value of binom", side=4, col="red", col.axis="red", line=2.5)
+
+axis(4, ylim=c(-30, 0), col="red", col.axis="red")
+
+axis(1, binom.x)
+
+mtext("HOTness", side=1, col="black", line=2.5)
+
+legend(45, -20, legend=c("p-value of binom", "p-value of hyper"), text.col=c("black", "red"), pch=c(16,15), col=c("black", "red"))
+
+dev.new()
+
+plot(binom.x, log(hyper.y/binom.y), pch=16, ylim=c(-1, 24), axe=FALSE , type="b", col="black", main="HaibTfbsA549: log (p-value of hyper over p-value of binom)")
+
+# x axis
+axis(1, binom.x)
+axis(2, -1:24)
+
+mtext("HOTness", side=1, col="black", line=2.5)
+# mtext("log(hyper.y/binom.y)", side=2, col="black", line=2.5)

@@ -1,0 +1,8 @@
+# Argument List:
+# Name = hot70
+# peak file = hot70.bed
+# gene pos to peak = up,down
+# distance = 2000 bp
+# genome = ../../../bin/peak2gene/hg19.refGene
+# Output symbol as gene name = True
+#chrom	gTSS	gTTS	gene	NA	strand	pName	TSS2pCenter

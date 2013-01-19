@@ -1,0 +1,12 @@
+All regions in the narrowPeak files have been shrunk to 251bp.
+
+python run_all.py generate these files.
+
+cat *.narrowPeak > A549.unsorted.narrowPeak
+
+mergeBed -n -i A549.sorted.narrowPeak > A549.sorted.merged.hotness.narrowPeak
+
+mergeBed -n -nms -i A549.sorted.narrowPeak > A549.sorted.merged.hotnessAndTf.narrowPeak
+
+mergeBed -i A549.sorted.narrowPeak > A549.sorted.merged.narrowPeak 
+

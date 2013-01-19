@@ -1,0 +1,19 @@
+# Argument List:
+# Name = hot50
+# peak file = hot50.bed
+# gene pos to peak = up,down
+# distance = 2000 bp
+# genome = ../../../bin/peak2gene/hg19.refGene
+# Output symbol as gene name = True
+#chrom	pStart	pEnd	pName	pScore	NA	gene	strand	TSS2pCenter
+chr10	47055787	47059541	51	0	0			
+chr15	63795249	63797382	55	0	0	USP3	+	494
+chr17	38707317	38708973	51	0	0			
+chr17	43224045	43227031	56	0	0	HEXIM1	+	-855
+chr17	57914838	57919111	55	0	0	MIR21	+	1652
+chr17	57920372	57922695	55	0	0			
+chr17	8088939	8091513	56	0	0			
+chr19	39339038	39343767	66	0	0	HNRNPL|HNRNPL	-|-	-1577|785
+chr19	41220755	41225295	61	0	0	ADCK4|ITPKC	-|+	235|-18
+chr2	55275459	55278805	51	0	0	RTN4|RTN4|RTN4|RTN4	-|-|-|-	-602|-602|-602|806
+chr20	25289270	25292267	57	0	0			

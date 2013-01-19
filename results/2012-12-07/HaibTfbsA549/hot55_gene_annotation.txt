@@ -1,0 +1,14 @@
+# Argument List:
+# Name = hot55
+# peak file = hot55.bed
+# gene pos to peak = up,down
+# distance = 2000 bp
+# genome = ../../../bin/peak2gene/hg19.refGene
+# Output symbol as gene name = True
+#chrom	gTSS	gTTS	gene	NA	strand	pName	TSS2pCenter
+chr15	63796809	63883659	USP3	0	+	55	494
+chr17	43224683	43229467	HEXIM1	0	+	56	-855
+chr17	57918626	57918697	MIR21	0	+	55	1652
+chr19	39327028	39342979	HNRNPL	0	-	66|66	-1577|785
+chr19	41197433	41222790	ADCK4	0	-	61	235
+chr19	41223007	41246763	ITPKC	0	+	61	-18

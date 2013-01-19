@@ -1,0 +1,100 @@
+A detailed explanation can be found here:
+
+http://bejerano.stanford.edu/help/display/GREAT/Programming+Interface
+
+1. To use web mode of GREAT, write this to a .html file:
+
+<html>
+ <body>
+  <a href="http://bejerano.stanford.edu/great/public/cgi-bin/greatStart.php?requestSpecies=hg19&requestName=Example+Data&requestSender=Yu&requestURL=http%3A%2F%2Fzlab.bu.edu%2Fgreat%2FHaibTfbsA549Atf3V0422111Etoh02AlnRep0.bed">
+  Send to GREAT
+  </a>
+ </body>
+</html>
+
+Remember to encode the url in the html file.
+
+2. To use batch mode of GREAT, use this commmand:
+
+
+wget -O results.tsv "http://bejerano.stanford.edu/great/public/cgi-bin/greatStart.php?outputType=batch&requestSpecies=hg19&requestName=Example+Data&requestSender=Client+A&requestURL=http%3A%2F%2Fzlab.bu.edu%2Fgreat%2FHaibTfbsA549Atf3V0422111Etoh02AlnRep0.bed"
+
+3. About the format of the output (*.tsv) by GREAT batch mode:
+
+About output by batch mode in GREAT (each line represents a column in the output by batch mode):
+
+
+
+1. Ontology
+2. Term ID
+
+3. Description
+
+------------------------Binomial over Regions------------------------
+
+ 4. Rank
+
+ 5. Raw P-Value
+
+ 6. Bonferroni P-Value
+
+ 7. FDR Q-Value
+
+ 8. Fold Enrichment (Obs/Exp)
+
+ 9. Expected (n * p)
+
+ 10. Observed Region Hits (k)
+
+ 11. Genome Fraction (p)
+
+ 12. Region Set Coverage (k/n)
+
+------------------------Hypergeometric over Genes------------------------
+
+ 13. Rank
+
+ 14. Raw P-Value
+
+ 15. Bonferroni P-Value
+
+ 16. FDR Q-Value
+
+ 17. Fold Enrichment (Obs/Exp)
+
+ 18. Expected (n * K/N)
+
+ 19. Observed Gene Hits (k)
+
+ 20. Total Genes (K)
+
+ 21. Gene Set Coverage (k/n)
+
+ 22. Term Gene Coverage (k/K)
+
+------------------------
+
+23. Regions
+
+wget -O results.tsv "http://bejerano.stanford.edu/great/public/cgi-bin/greatStart.php?outputType=batch&requestSpecies=hg18&requestName=Example+Data&requestSender=Client+A&requestURL=http%3A%2F%2Fwww.clientA.com%2Fdata%2Fexample1.bed"
+
+
+
+
+# How to plot p-values of hyper and binom:
+Find the the corresponding folder the r script to plot them
+
+K549:
+GO:0032465
+
+
+Gm12892
+GO:0006334
+
+SydhTfbsK562
+GO:0034728
+
+
+Generate the binom/hyper p-values:
+
+Use a bed file to run GREAT and pick a GO Term and plot that GO Term's "Survival Plot"

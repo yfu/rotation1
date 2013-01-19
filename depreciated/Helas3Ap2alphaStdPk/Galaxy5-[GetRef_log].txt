@@ -1,0 +1,27 @@
+[16:37:25] use default: find up+down
+[16:37:25] Argument List: 
+[16:37:25] Name = output
+[16:37:25] peak file = /data/CistromeAP/galaxy_database/files/000/423/dataset_423018.dat
+[16:37:25] gene pos to peak = up,down
+[16:37:25] distance = 2000 bp
+[16:37:25] genome = /data/CistromeAP/static_libraries/ceaslib/GeneTable/hg19
+[16:37:25] Output symbol as gene name = True
+
+[16:37:25] Read file</data/CistromeAP/galaxy_database/files/000/423/dataset_423018.dat> OK! <8025> peaks.
+[16:37:28] process peaks <500>
+[16:37:30] process peaks <1000>
+[16:37:31] process peaks <1500>
+[16:37:33] process peaks <2000>
+[16:37:33] process peaks <2500>
+[16:37:34] process peaks <3000>
+[16:37:36] process peaks <3500>
+[16:37:37] process peaks <4000>
+[16:37:38] process peaks <4500>
+[16:37:39] process peaks <5000>
+[16:37:40] process peaks <5500>
+[16:37:41] process peaks <6000>
+[16:37:42] process peaks <6500>
+[16:37:43] process peaks <7000>
+[16:37:44] process peaks <7500>
+[16:37:44] process peaks <8000>
+[16:37:45] Please Cheak outfile: <output_peaks_annotation.txt> <output_gene_annotation.txt>

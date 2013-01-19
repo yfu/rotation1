@@ -1,0 +1,114 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8">
+    <title>GREAT Input: Genomic Regions Enrichment of Annotations Tool, Bejerano Lab, Stanford University</title>
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!-- HTML5 shim, for IE6-8 support of HTML elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <!-- styles -->
+    <link href="../css/bootstrap.css" rel="stylesheet">
+    <link href="../css/custom.css" rel="stylesheet">
+
+    <!-- scripts -->
+    <script type="text/javascript" src="../yui/input.js"></script>
+    <script type="text/javascript" src="greatInput.js"></script>
+    
+    <script type="text/javascript" src="../js/greatSite.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.0/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.16/jquery-ui.min.js"></script>
+    <script src="../js/jquery/jquery.tablesorter.min.js"></script>
+</head><body><link rel="icon" href="../images/GREAT-favicon.ico" type="image/x-icon" />
+
+<script type="text/javascript">
+function changeVersionTo(version) {
+	var _http_host = "great.stanford.edu";
+	window.location = "http://" + _http_host + "/" + version + "/html/index.php";
+	return false;
+}
+
+function changeVersionFromList() {
+    var list = document.getElementById("versionList");
+    var elt = list.options[list.selectedIndex];
+//	list.selectedIndex = "placeHolder";
+	return changeVersionTo(elt.value);
+}
+
+function goToCurrentGREAT() {
+	return changeVersionTo("public");
+}
+</script>
+
+<div class="topbar">
+  <div class="topbar-inner">
+    <div class="container-fluid">
+      <a class="brand" href="../html/index.php" style="font-family:Futura,'Helvetica Neue', Arial">
+        <img style="height: 22px" src="../images/GREAT_logo_inv.png" />
+      </a>
+      <ul class="nav">
+        <li><a href="../html/splash.php">Overview</a></li>
+        <li><a href="../html/news.php">News</a></li>
+        <li><a href="../html/index.php">Use GREAT</a></li>
+        <li><a href="../html/demo.php">Demo</a></li>
+        <li><a href="../html/video.php">Video</a></li>
+        <li><a href="/Citation" target="_blank">How to Cite</a></li>
+        <li style="display:none"><a href="/Download" target="_blank">Download</a></li>
+        <li><a href="" target="_blank">Help</a></li>
+        <li style="width:100px"><a style="float: left; padding-right: 2px" href="/forum" target="_blank">Forum</a> <img src="../images/new.png" /></li>
+      </ul>
+      <p class="pull-right"><a href="http://bejerano.stanford.edu" target="_blank">Bejerano Lab, Stanford University</a></p>
+    </div>
+  </div>
+</div>
+
+<div class="container-fluid">
+
+  
+  <div class="row">
+    <div class="span14">    
+            <select id="versionList" onchange="return versionChanged();" style="width:500px">
+                  <option id="great" value="great" style="color: #fa5">GREAT version great&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;the latest and greatest ontologies</option>
+                <option id="public" value="public" style="color: black">GREAT version 2.0.2&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;current (04/03/2012 to now)</option>
+        <option id="public-1.8.2" value="public-1.8.2" style="color: red" >GREAT version 1.8.2&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;reproduce results from 11/19/2010 to 04/02/2012)</option>
+        <option id="public-1.2.6" value="public-1.2.6" style="color: red" >GREAT version 1.2.6&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;reproduce results from 05/20/2010 to 11/18/2010</option>
+      </select>
+      <script>
+                  document.getElementById("versionList").style.color = "#fa5";
+                var versionChanged = function() {
+          var list = document.getElementById("versionList");
+          var elt = list.options[list.selectedIndex];
+          window.location = "/great/" + elt.value + "/html";
+          return false;
+        };
+      </script>
+    </div>
+  </div>
+  <hr/>
+<link rel='stylesheet' type='text/css' href='../html/great.css' />
+<div class='gBodyText'>
+<p>&nbsp;<p><b><i>GREAT</i></b> encountered a user error.<p>
+<blockquote><b><i>GREAT</i></b> encountered an error while retrieving data from http://zlab.bu.edu/great/HaibTfbsA549/hot45.bed.<br/></blockquote>
+</div>
+
+       <footer>
+         <div>
+           <a href="http://med.stanford.edu/"><img src="../images/medSchoolLogo.gif" /></a>
+           <a href="http://bejerano.stanford.edu/"><img src="../images/bejerano.png" /></a>
+           <a href="http://engineering.stanford.edu/"><img src="../images/engineeringSchoolLogo.gif" /></a>
+         </div>
+         <p>Copyright &copy; 2010, 2011, 2012. The Board of Trustees of Leland Stanford Junior University. All rights reserved.</p>
+         <p>
+           <a target="_blank" href="http://stanford.edu/site/terms.html" style="margin-right:215px">Terms of Use</a>
+           <a target="_blank" href="/About+Us" style="margin-right:215px">About Us</a>
+           <a target="_blank" href="/Contact+Us">Contact Us</a>
+         </p>
+       </footer>
+     </div>
+
+
+</body></html>
