@@ -1,0 +1,10 @@
+#!/usr/bin/env perl
+
+# This script will try to figure out the go terms (or other annotation) that most frequently appear and I will use these go terms to plot the heatmap.
+
+my @files = glob "*.parsed.txt";
+for my $f ( @files ) {
+    open FH, $f
+    for ( ) {
+    }
+}

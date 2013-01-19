@@ -1,0 +1,34 @@
+#!/usr/bin/env perl
+
+# Given the times of appearance for each GO term, this script will go to each ".parsed.txt" file and find the p-values from binomial test and hypergeometric test.
+
+# Then it will generate a table with the following format (please ignore the # symbol):
+
+# TFname      binom-p hyper-p
+# TF1   0.001 0.002
+# TF2   0.003 0.004
+# TF3   0.005 0.006
+
+# This file can be fed into R and get the heatmap.
+my $pq = undef                  # If you want 
+
+
+my $files = glob "*.parsed.txt";
+my @go_terms; # This array stores all the go terms that we are interested in
+              # i.e. the "common" GO terms that apear significant in the output
+              # of GREAT.
+my $first_line = "TF name" . (join "\t", @go_terms);
+print 
+
+for my $f ( $files ) {
+    open FH, $f;
+    my $this_tf_name = m/Tfbs[A-Z][a-z0-9]+([A-Z][a-z0-9]+)/r;
+    print "I am processing $this_tf_name...\n";
+    while ( <FH> ) {
+        chomp;
+        my @elements = split "\t";
+        my $this_go_term = $elements[0];
+        if ( ) {
+        }
+    }
+}

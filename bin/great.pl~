@@ -1,0 +1,49 @@
+#!/usr/bin/env perl
+use strict;
+use warnings;
+
+my %features;
+
+sub gen_hot_bed {
+    # This function will get the bed filename (the 1st param) and a list of
+    # hotness (the 2nd param) e.g. qw/10 20 30 40 50/ and 10 means 10% of the
+    # original peaks while 95 means 95% of the original peaks
+    my $filename = shift @_;
+    my @hotnesses = @_;
+    print "You select HOTness:@hotnesses";
+
+    delete @features{ keys %features };
+    open FH, '<', $filename;
+    # This hash saves the line as the key and hotness as the value
+    
+    while ( <FH> ) {
+        chomp;
+        # print;                  # For debugging purpose
+        my @elements = split;
+        my $chrom = $elements[0];
+        my $start = $elements[1];
+        my $end = $elements[2];
+        my $hotness = $elements[3];
+        $features{"$chrom\t$start\t$end\t$hotness\n"} = $hotness;
+    }
+    foreach my $h ( @hotnesses ) {
+        my @sorted = sort by_signal keys %features;
+        open W, '>', "hot${h}.bed";
+        for ( @sorted) {
+            if ( $features{$_} >= $h ) {
+                print W;                
+            }
+
+        }
+    }
+}
+
+
+sub by_signal{
+    $features{$a} <=> $features{$b};
+}
+my $fn = shift @ARGV;
+gen_hot_bed $fn, @ARGV
+
+my $call_great = 'wget -O results.tsv "http://bejerano.stanford.edu/great/public/cgi-bin/greatStart.php?outputType=batch&requestSpecies=hg18&requestName=Example+Data&requestSender=Client+A&requestURL=http%3A%2F%2Fzlab.bu.edu%2Fgreat%2FHaibTfbsA549%2FHaibTfbsA549.sorted.merged.hotness.narrowPeak"'
+

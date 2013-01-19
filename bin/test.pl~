@@ -1,0 +1,67 @@
+# #!/usr/bin/env perl
+# use File::Basename;
+# use 5.012;
+
+# my $str = "\"Test\"";
+# say $str;
+
+# my $big_str = "One $str";
+# say $big_str;
+
+# say '-' x 80;
+
+# use URI::Escape;
+
+# my $url = "http://zlab.bu.edu/great/HaibTfbsA549/HaibTfbsA549.sorted.merged.hotness.narrowPeak";
+# my $encode = uri_escape($url);
+# say $encode;
+
+# say "The original string is " . uri_unescape($encode);
+
+# say '-' x 80;
+
+# use URI::Split qw(uri_split uri_join);
+
+# my ($schema, $auth, $path) = uri_split($url);
+# print "The result of uri_split is $schema, $auth, $path";
+
+
+# say '-' x 80;
+
+# my $basename = basename('test.bed', qw(bed));
+# print "The basename is $basename\n";
+
+# say '-' x 80;
+# my $a = "aaaaaa
+# 111222";
+# print $a;
+# print "\n";
+
+# say '-' x 80;
+
+# my $str = "abc";
+# $_ = "a b\tc";
+
+# my @a = split $_;
+
+# print "@a";
+
+
+# print "\n";
+# say '-' x 80;
+
+# my @a = glob "*.*";
+# my @pys = grep /\.py\Z/, @a;
+# print "@pys";
+# say;
+# say '-' x 80;
+# my @a = ();
+
+# my $a = defined @a;
+# print $a;
+
+
+# my $a = defined( (@a = ()) );  
+# print $a;
+
+print "@ARGV";

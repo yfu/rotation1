@@ -1,0 +1,19 @@
+#!/usr/bin/env perl
+
+# This script will call great.pl to process each of the bed and narrowPeak file
+
+use Cwd;
+
+opendir DH, cwd();
+foreach ( readdir DH ) {
+    chomp;
+    print;
+    
+    next unless ( /(\.bed)|(\.narrowPeak)\Z/ );
+    my $command = "great.pl http://zlab.bu.edu/great/all_bed_files/$_";
+    # print $command; print "\n";
+    
+    
+    system $command;
+    
+}

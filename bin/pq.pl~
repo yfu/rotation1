@@ -1,0 +1,6 @@
+#!/usr/bin/env perl
+
+# Given the times of appearance for each GO term, this script will go to each ".parsed.txt" file and find the p-values from binomial test and hypergeometric test.
+
+# Then it will generate a table with the following format:
+

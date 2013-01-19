@@ -1,0 +1,14 @@
+1. great.pl will call GREAT and parse the result into 4-column files that contain the Ontology, ID, p-value and q-value. These files have the same suffix "parse.txt".
+
+2. In order to plot a heatmap, I need to find the most frequence GO terms. And get_common.pl will generate a ranking in which only GO Terms are selected.
+
+3. Using the ranking, go bach to the "parse.txt" files and generate a table like this:
+
+TFname      binom-p hyper-p
+TF1   0.001 0.002
+TF2   0.003 0.004
+TF3   0.005 0.006
+
+In this table, each line is a TF, the 1st column is the TF identifier; the 2nd column is the p value from binomial test; the 3rd column is p value from hypergeomertic test. "pq.pl" will handle this step.
+
+4. Using R to plot the heatmap
